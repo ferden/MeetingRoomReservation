@@ -10,7 +10,7 @@ namespace MeetingRoomReservation._2Entities.DTOs
 {
     public class PlaceListDto: DtoGetBase
     {
-        public IList<Place> Place { get; set; }
+        public IList<Place> Places { get; set; }
 
     }
 }

@@ -6,7 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingRoomReservation.1Shared\MeetingRoomReservation.1Shared.csproj" />
+    <ProjectReference Include="..\MeetingRoomReservation.2Entities\MeetingRoomReservation.2Entities.csproj" />
+    <ProjectReference Include="..\MeetingRoomReservation.3Data\MeetingRoomReservation.3Data.csproj" />
   </ItemGroup>
 
 </Project>

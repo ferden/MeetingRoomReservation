@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using MeetingRoomReservation._1Shared.Entities.Abstract;
 
 namespace MeetingRoomReservation._2Entities.DTOs
 {
-  public  class PaaceAddDto
+  public  class PlaceAddDto : DtoGetBase
     {
 
         [DisplayName("Yerleşke Adı")]

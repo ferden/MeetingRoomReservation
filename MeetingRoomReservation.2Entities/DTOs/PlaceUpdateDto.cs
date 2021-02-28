@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MeetingRoomReservation._1Shared.Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MeetingRoomReservation._2Entities.DTOs
 {
-    public class PlaceUpdate
+    public class PlaceUpdateDto:DtoGetBase
     {
         public int Id { get; set; }
 
