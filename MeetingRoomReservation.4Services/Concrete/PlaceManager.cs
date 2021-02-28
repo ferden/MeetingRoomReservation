@@ -32,7 +32,7 @@ namespace MeetingRoomReservation._4Services.Concrete
                 return new DataResult<PlaceDto>(ResultStatus.Success, new PlaceDto
                 {
                     Place = place,
-                    ResultStatus = ResultStatus.Success
+                    //ResultStatus = ResultStatus.Success
                 });
             }
             return new DataResult<PlaceDto>(ResultStatus.Error, $"Beklenmeyen bir hata ile karşılaşıldı.", null);

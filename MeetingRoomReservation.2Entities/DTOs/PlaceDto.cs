@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MeetingRoomReservation._2Entities.DTOs
 {
-    public class PlaceDto:DtoGetBase
+    public class PlaceDto: DtoGetBase
     {
         public Place Place { get; set; }
     }

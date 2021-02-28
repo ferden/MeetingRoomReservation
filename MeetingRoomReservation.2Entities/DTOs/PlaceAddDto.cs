@@ -9,7 +9,7 @@ using MeetingRoomReservation._1Shared.Entities.Abstract;
 
 namespace MeetingRoomReservation._2Entities.DTOs
 {
-  public  class PlaceAddDto : DtoGetBase
+  public  class PlaceAddDto :DtoGetBase
     {
 
         [DisplayName("Yerleşke Adı")]
