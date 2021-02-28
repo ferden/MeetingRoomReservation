@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MeetingRoomReservation._1Shared</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Abstract\" />
+    <Folder Include="Data\Concrete\" />
+    <Folder Include="Entities\Abstract\" />
+    <Folder Include="Utilities\Results\Abstract\" />
+    <Folder Include="Utilities\Results\" />
+  </ItemGroup>
+
+</Project>
