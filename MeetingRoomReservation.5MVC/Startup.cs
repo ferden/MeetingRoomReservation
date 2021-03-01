@@ -20,7 +20,7 @@ namespace MeetingRoomReservation._5MVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddAutoMapper(typeof(PlaceProfile));
+           // services.AddAutoMapper(typeof(PlaceProfile));
             services.LoadMyServices();
          
         }
