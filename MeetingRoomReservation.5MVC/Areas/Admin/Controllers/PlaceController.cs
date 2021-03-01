@@ -13,9 +13,9 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
     {
         private readonly IPlaceService _placeService;
 
-        public PlaceController(IPlaceService palaceService)
+        public PlaceController(IPlaceService placeService)
         {
-            _placeService = palaceService;
+            _placeService = placeService;
         }
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -29,7 +29,7 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return PartialView("_PalaceAddPartial");
+            return PartialView("_PlaceAddPartial");
         }
     }
 }

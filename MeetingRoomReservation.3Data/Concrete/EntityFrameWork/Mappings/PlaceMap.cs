@@ -26,7 +26,7 @@ namespace MeetingRoomReservation._3Data.Concrete.EntityFrameWork.Mappings
              new Place
              {
                  Id = 1,
-                 Name = "TOBB AZ Yerleşkesi",
+                 Name = "TOBB AZ Yerleşkesi2",
                  CreatedByName = "initial",
                  IsActive = true,
                  IsDeleted = false,

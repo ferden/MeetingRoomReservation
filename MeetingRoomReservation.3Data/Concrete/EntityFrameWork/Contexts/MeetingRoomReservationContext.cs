@@ -21,6 +21,8 @@ namespace MeetingRoomReservation._3Data.Concrete.EntityFrameWork.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PlaceMap());
+            modelBuilder.ApplyConfiguration(new MeetingRoomMap());
+            modelBuilder.ApplyConfiguration(new ReservationMap()); 
 
 
         }

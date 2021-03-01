@@ -15,12 +15,12 @@ namespace MeetingRoomReservation._2Entities.DTOs
         [DisplayName("Yerleşke Adı")]
         [Required(ErrorMessage = "{0} Boş geçilmemelidir")]
         [MaxLength(70, ErrorMessage = "{0} {1} karakterden Büyük olmamalıdır ")]
-        [MinLength(2, ErrorMessage = "{0} {1} karakterden  küçük olmamalıdır ")]
+        [MinLength(2, ErrorMessage = "{0} {1} karakterden  Küçük olmamalıdır ")]
         public string Name { get; set; }
 
         [DisplayName("Not")]
         [MaxLength(70, ErrorMessage = "{0} {1} karakterden Büyük olmamalıdır ")]
-        [MinLength(1, ErrorMessage = "{0} {1} karakterden  küçük olmamalıdır ")]
+        [MinLength(1, ErrorMessage = "{0} {1} karakterden  Küçük olmamalıdır ")]
         public string Note { get; set; }
     }
 }

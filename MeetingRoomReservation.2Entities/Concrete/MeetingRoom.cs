@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MeetingRoomReservation._2Entities.Concrete
 {
-    public class Room:EntityBase,IEntity
+    public class MeetingRoom:EntityBase,IEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }

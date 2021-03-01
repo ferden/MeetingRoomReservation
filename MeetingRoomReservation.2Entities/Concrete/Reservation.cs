@@ -17,6 +17,6 @@ namespace MeetingRoomReservation._2Entities.Concrete
         public DateTime MeetingEndTime { get; set; }
         public string MeetingNotes { get; set; }
         public int MeetingRoomID { get; set; }
-        public Room MeetingRoom { get; set; }
+        public MeetingRoom MeetingRoom { get; set; }
     }
 }

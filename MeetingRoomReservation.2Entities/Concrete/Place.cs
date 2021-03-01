@@ -11,6 +11,6 @@ namespace MeetingRoomReservation._2Entities.Concrete
     {
         public string Name { get; set; }
 
-        public ICollection<Room> Rooms { get; set; }
+        public ICollection<MeetingRoom> MeetingRooms { get; set; }
     }
 }
