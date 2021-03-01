@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MeetingRoomReservation._1Shared.Utilities.Results.ComplexTypes;
 using MeetingRoomReservation._4Services.Abstract;
 
-namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
+namespace MeetingRoomReservation._5MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class HomeController : Controller

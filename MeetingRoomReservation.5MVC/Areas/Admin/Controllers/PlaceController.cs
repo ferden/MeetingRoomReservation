@@ -11,16 +11,16 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
     [Area("Admin")]
     public class PlaceController : Controller
     {
-        private readonly IPlaceService _placeService;
+        private readonly IPlaceService _placeservice;
 
-        public PlaceController(IPlaceService placeService)
+        public PlaceController(IPlaceService placeservice)
         {
-            _placeService = placeService;
+            _placeservice = placeservice;
         }
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var result = await _placeService.GetAllAsync();
+            var result = await _placeservice.GetAllAsync();
         
                 return View(result.Data);
             
