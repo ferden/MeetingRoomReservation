@@ -32,9 +32,7 @@
                                                  <th>#</th>
                                               <th>Yerleske Adi</th>
                                                 <th>Aktif</th>
-                                                   <th>Oluşturma Tarihi</th>
-
-                           
+                                                   <th>Oluşturma Tarihi</th> 
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -43,7 +41,7 @@
                                             <td>@place.Id</td>
                                                 <td>@place.Name</td>
                                                 <td>@place.IsActive</td>
-                                                <td>@place.IsDeleted</td>
+                                                <td>@place.CreatedDate</td>
                              
                                             </tr>}
                                           
@@ -53,10 +51,6 @@
                                 </div>
                             </div>
                             </div>
-
-
-
-
 }
 
 @if (Model.ResultStatus==ResultStatus.Error)
@@ -82,9 +76,7 @@
                 buttons: [
                     {
         text: 'Ekle',
-                        attr: {
-        id: "btnAdd",
-                        },
+                        attr: { id: "btnAdd",},
                         className: 'btn btn-success',
                         action: function(e, dt, node, config) {
 
@@ -132,9 +124,11 @@
             });
 
                         /* DataTables end here */
+
+
             /* Ajax GET / Getting the _CategoryAddPartial as Modal Form starts from here. */
             $(function() {
-                const url = '/Admin/Yerleske/Add/';
+                const url = '/Admin/Place/Add/';
                 const placeHolderDiv = $('#modalPlaceHolder');
                 $('#btnAdd').click(function() {
         $.get(url).done(function (data) {
@@ -144,8 +138,6 @@
                 });
              });
         });
-    
-    
     </script>
 }
 

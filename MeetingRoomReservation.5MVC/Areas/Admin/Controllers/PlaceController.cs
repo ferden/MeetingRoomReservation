@@ -5,6 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using MeetingRoomReservation._4Services.Abstract;
 using MeetingRoomReservation._1Shared.Utilities.Results.ComplexTypes;
+using MeetingRoomReservation._2Entities.DTOs;
+using MeetingRoomReservation._5MVC.Areas.Admin.Models;
+using MeetingRoomReservation._1Shared.Utilities.Extensions;
+using System.Text.Json;
 
 namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
 {
@@ -30,6 +34,43 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
         public IActionResult Add()
         {
             return PartialView("_PlaceAddPartial");
+        }
+
+        [HttpPost]
+        public async IActionResult Add(PlaceAddDto placeAddDto)
+        {
+            //var PlaceAjaxModel = new PlaceAddAjaxViewModel
+            //{
+            //    //RenderViewToStringAsync shareddaki conteoller extensionsdan
+
+            //    PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto),
+            //};
+
+            if (ModelState.IsValid)
+            {
+                var result = await _placeservice.AddAsync(placeAddDto, "fikret");
+
+                if (result.ResultStatus == ResultStatus.Success)
+                {
+                    var placeAddAjaxModel = JsonSerializer.Serialize(new PlaceAddAjaxViewModel
+                    {
+
+                        PlaceDto = result.Data,
+                        PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto)
+                    });
+                    return Json(placaAddAjaxModel);
+                }
+                else
+                {
+                    var placeAddAjaxModel = JsonSerializer.Serialize(new PlaceAddAjaxViewModel
+                    {
+
+                       // PlaceDto = result.Data,
+                        PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto)
+                    });
+                    return Json(placeAddAjaxModel);
+                }
+            }
         }
     }
 }
