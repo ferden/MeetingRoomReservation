@@ -24,7 +24,6 @@ namespace MeetingRoomReservation._3Data.Concrete.EntityFrameWork.Contexts
             modelBuilder.ApplyConfiguration(new MeetingRoomMap());
             modelBuilder.ApplyConfiguration(new ReservationMap()); 
 
-
         }
 
     }

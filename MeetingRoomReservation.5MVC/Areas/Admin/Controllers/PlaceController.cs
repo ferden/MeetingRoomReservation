@@ -27,8 +27,7 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
             var result = await _placeservice.GetAllAsync();
         
                 return View(result.Data);
-            
-            
+                      
         }
         [HttpGet]
         public IActionResult Add()
@@ -37,7 +36,7 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async IActionResult Add(PlaceAddDto placeAddDto)
+        public async Task<IActionResult> Add(PlaceAddDto placeAddDto)
         {
             //var PlaceAjaxModel = new PlaceAddAjaxViewModel
             //{
@@ -58,19 +57,34 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
                         PlaceDto = result.Data,
                         PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto)
                     });
-                    return Json(placaAddAjaxModel);
-                }
-                else
-                {
-                    var placeAddAjaxModel = JsonSerializer.Serialize(new PlaceAddAjaxViewModel
-                    {
-
-                       // PlaceDto = result.Data,
-                        PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto)
-                    });
                     return Json(placeAddAjaxModel);
                 }
+                else
+                        {
+                    var placeAddAjaxErrorModel = JsonSerializer.Serialize(new PlaceAddAjaxViewModel
+                    {
+
+                        // PlaceDto = result.Data,
+                        PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto)
+                    });
+                    return Json(placeAddAjaxErrorModel);
+
+                }
+
+            }
+            else
+            {
+                var placeAddAjaxErrorModel = JsonSerializer.Serialize(new PlaceAddAjaxViewModel
+                {
+
+                   // PlaceDto = result.Data,
+                    PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto)
+                });
+                return Json(placeAddAjaxErrorModel);
+            }
+                
+
             }
         }
     }
-}
+
