@@ -97,17 +97,17 @@ namespace MeetingRoomReservation._3Data.Migrations
             migrationBuilder.InsertData(
                 table: "Places",
                 columns: new[] { "Id", "CreatedByName", "CreatedDate", "IsActive", "IsDeleted", "ModifiedByName", "ModifiedDate", "Name", "Note" },
-                values: new object[] { 1, "initial", new DateTime(2021, 3, 1, 14, 20, 36, 695, DateTimeKind.Local).AddTicks(2218), true, false, "Initial", new DateTime(2021, 3, 1, 14, 20, 36, 695, DateTimeKind.Local).AddTicks(3109), "TOBB AZ Yerleşkesi2", "Initial" });
+                values: new object[] { 1, "initial", new DateTime(2021, 3, 5, 17, 59, 13, 701, DateTimeKind.Local).AddTicks(9982), true, false, "Initial", new DateTime(2021, 3, 5, 17, 59, 13, 702, DateTimeKind.Local).AddTicks(1891), "TOBB AZ Yerleşkesi2", "Initial" });
 
             migrationBuilder.InsertData(
                 table: "MeetingRooms",
                 columns: new[] { "Id", "Area", "Computer", "CreatedByName", "CreatedDate", "Description", "IsActive", "IsDeleted", "ModifiedByName", "ModifiedDate", "Name", "Note", "PersonCapacity", "PlaceID", "Projection", "Status", "WebConference" },
-                values: new object[] { 1, 10, true, "initial", new DateTime(2021, 3, 1, 14, 20, 36, 700, DateTimeKind.Local).AddTicks(3135), "Buyuk Salon2", true, false, "Initial", new DateTime(2021, 3, 1, 14, 20, 36, 700, DateTimeKind.Local).AddTicks(3145), "1 nolu Salon2", "note", 12, 1, true, 1, "zoom" });
+                values: new object[] { 1, 10, true, "initial", new DateTime(2021, 3, 5, 17, 59, 13, 710, DateTimeKind.Local).AddTicks(6087), "Buyuk Salon2", true, false, "Initial", new DateTime(2021, 3, 5, 17, 59, 13, 710, DateTimeKind.Local).AddTicks(6237), "1 nolu Salon2", "note", 12, 1, true, 1, "zoom" });
 
             migrationBuilder.InsertData(
                 table: "Reservations",
                 columns: new[] { "Id", "CreatedByName", "CreatedDate", "IsActive", "IsDeleted", "MeetingDescription", "MeetingEndTime", "MeetingNotes", "MeetingRoomID", "MeetingStartTime", "MeetingSubject", "MeetingType", "ModifiedByName", "ModifiedDate", "Note", "RequestUser" },
-                values: new object[] { 1, "initial", new DateTime(2021, 3, 1, 14, 20, 36, 702, DateTimeKind.Local).AddTicks(4353), true, false, "Test Desc Topantisi", new DateTime(2021, 3, 1, 14, 50, 36, 702, DateTimeKind.Local).AddTicks(3138), "Notlar", 1, new DateTime(2021, 3, 1, 14, 20, 36, 702, DateTimeKind.Local).AddTicks(2822), "test toplanti Basliği", 1, "initial", new DateTime(2021, 3, 1, 14, 20, 36, 702, DateTimeKind.Local).AddTicks(4045), "Not", "fikret.erden" });
+                values: new object[] { 1, "initial", new DateTime(2021, 3, 5, 17, 59, 13, 714, DateTimeKind.Local).AddTicks(2641), true, false, "Test Desc Topantisi", new DateTime(2021, 3, 5, 18, 29, 13, 714, DateTimeKind.Local).AddTicks(572), "Notlar", 1, new DateTime(2021, 3, 5, 17, 59, 13, 713, DateTimeKind.Local).AddTicks(9999), "test toplanti Basliği", 1, "initial", new DateTime(2021, 3, 5, 17, 59, 13, 714, DateTimeKind.Local).AddTicks(2149), "Not", "fikret.erden" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_MeetingRooms_PlaceID",

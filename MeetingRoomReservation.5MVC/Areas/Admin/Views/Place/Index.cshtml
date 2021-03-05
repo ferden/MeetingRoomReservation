@@ -142,10 +142,11 @@
                     const form = $('#form-place-add');
                     const actionUrl = form.attr('action');
                     const dataToSend = form.serialize();
+                    console.log('datatosend' + dataToSend )
                     $.post(actionUrl,dataToSend).done(function(data){
-                    
+                        console.log('data: ' + data)
                     const placeAddAjaxModel= jQuery.parseJSON(data);
-                  
+                        console.log('placeAddAjaxModel: ' + placeAddAjaxModel)
                     const newFormBody = $('.modal-body', placeAddAjaxModel.PlaceAddPartial);
                     placeHolderDiv.find('.modal-body').replaceWith(newFormBody);
                     const isValid=newFormBody.find('[name="IsValid"]').val()==='True';
@@ -155,30 +156,30 @@
                     {
                         placeHolderDiv.find('.modal').modal('hide');
 
-  
                          placesTable.row.add( [
-         '.1',
-          '.2',
-          '.3',
-          '.4',
-        ] ).draw( false );
+          placeAddAjaxModel.PlaceDto.Place.Id,
+          placeAddAjaxModel.PlaceDto.Place.Name,
+          placeAddAjaxModel.PlaceDto.Place.IsActive,
+          placeAddAjaxModel.PlaceDto.Place.CreatedDate,
+                         ]).draw(false);
+                    
+                        console.log(placeAddAjaxModel.PlaceDto.Place.IsActive)
 
-
-                    const newTableRow =`
+                    //const newTableRow =`
                         
-                        <tr name="${placeAddAjaxModel.PlaceDto.Place.Id}">
-                                            <td>${placeAddAjaxModel.PlaceDto.Place.Id}</td>
-                                                <td>${placeAddAjaxModel.PlaceDto.Place.Name}</td>
-                                                <td>${placeAddAjaxModel.PlaceDto.Place.IsActive}</td>
-                                                <td>${placeAddAjaxModel.PlaceDto.Place.CreatedDate}</td>
+                    //    <tr name="${placeAddAjaxModel.PlaceDto.Place.Id}">
+                    //                        <td>${placeAddAjaxModel.PlaceDto.Place.Id}</td>
+                    //                            <td>${placeAddAjaxModel.PlaceDto.Place.Name}</td>
+                    //                            <td>${placeAddAjaxModel.PlaceDto.Place.IsActive}</td>
+                    //                            <td>${placeAddAjaxModel.PlaceDto.Place.CreatedDate}</td>
                              
-                                            </tr>
+                    //                        </tr>
                         
-                        `;  console.log(newTableRow + 'ntr');
-                        const newTableRowObject=$(newTableRow);
-                          console.log(newTableRowObject +'ntro');
+                    //    `;  console.log(newTableRow + 'ntr');
+                        //const newTableRowObject=$(newTableRow);
+                          //console.log(newTableRowObject +'ntro');
 
-                        newTableRowObject.hide();
+                    //    newTableRowObject.hide();
 
 
 

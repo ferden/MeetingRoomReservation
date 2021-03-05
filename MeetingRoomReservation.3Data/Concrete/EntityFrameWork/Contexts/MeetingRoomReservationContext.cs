@@ -14,7 +14,7 @@ namespace MeetingRoomReservation._3Data.Concrete.EntityFrameWork.Contexts
         public DbSet<Place> Places { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server = .; Database = MeetingRoomReservation; Trusted_Connection = True; Connect Timeout = 30; MultipleActiveResultSets = True; User ID = sa; Password = sa31173117");
+            optionsBuilder.UseSqlServer(@"Server = .; Database = MeetingRoomReservation; Trusted_Connection = True; Connect Timeout = 30; MultipleActiveResultSets = True; User ID = sa2; Password = sa31173117");
 
         }
 

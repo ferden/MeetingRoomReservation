@@ -38,12 +38,7 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(PlaceAddDto placeAddDto)
         {
-            //var PlaceAjaxModel = new PlaceAddAjaxViewModel
-            //{
-            //    //RenderViewToStringAsync shareddaki conteoller extensionsdan
-
-            //    PlaceAddPartial = await this.RenderViewToStringAsync("_PlaceAddPartial", placeAddDto),
-            //};
+  
 
             if (ModelState.IsValid)
             {
