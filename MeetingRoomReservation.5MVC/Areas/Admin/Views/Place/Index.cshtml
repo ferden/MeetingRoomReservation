@@ -136,7 +136,7 @@
             placeHolderDiv.find(".modal").modal('show');
                 });
                 });
-                //Post formdata
+                //Post form data
                 placeHolderDiv.on('click','#btnSave', function (event) {
                     event.preventDefault();
                     const form = $('#form-place-add');
@@ -155,7 +155,14 @@
                     {
                         placeHolderDiv.find('.modal').modal('hide');
 
-   
+  
+                         placesTable.row.add( [
+         '.1',
+          '.2',
+          '.3',
+          '.4',
+        ] ).draw( false );
+
 
                     const newTableRow =`
                         
@@ -172,11 +179,23 @@
                           console.log(newTableRowObject +'ntro');
 
                         newTableRowObject.hide();
+
+
+
+
+
                         $('#placesTable').append(newTableRowObject);
                         newTableRowObject.fadeIn(3500);
 
                         toastr.success(`placeAddAjaxModel.PlaceDto.Message`, 'BAŞARILItoastfr')
+
+
+                        
+
+
                     }
+
+
                     });
                 
                 });
