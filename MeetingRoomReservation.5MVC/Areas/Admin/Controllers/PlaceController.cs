@@ -9,6 +9,7 @@ using MeetingRoomReservation._2Entities.DTOs;
 using MeetingRoomReservation._5MVC.Areas.Admin.Models;
 using MeetingRoomReservation._1Shared.Utilities.Extensions;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
 {
@@ -80,6 +81,20 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
                 
 
             }
+
+        public async Task<JsonResult> GellAllPlaces()
+        {
+            var result = await _placeservice.GetAllAsync();
+            var places = JsonSerializer.Serialize(result.Data, new JsonSerializerOptions
+            {
+
+                ReferenceHandler = ReferenceHandler.Preserve
+            });
+            return Json(places);
+        
+        }
+
+
         }
     }
 
