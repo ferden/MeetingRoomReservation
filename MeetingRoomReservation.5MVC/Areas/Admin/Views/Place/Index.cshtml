@@ -89,8 +89,12 @@
         text: 'Yenile 3',
                         className: 'btn btn-warning',             
                         action: function(e, dt, node, config) {  
-                          
-        $.ajax({ 
+                         //   placesTable.ajax.reload(); 
+
+
+                            $('#placesTable').DataTable().ajax.reload();
+       $.ajax({ 
+
             type:'GET',
             url:'@Url.Action("GellAllPlaces","Place")',
             contentType:"application/json",
@@ -104,6 +108,7 @@
         
             if (placesListDto.ResultStatus===0)
             {
+         
                 console.log("Result: "+ placesListDto.ResultStatus);
                 let tableBody="<tbody>";
                 $.each(placesListDto.Places.$values,
@@ -123,7 +128,7 @@
             }           
             else {
               toastr.error(`${categoryListDto.Message}`, 'İşlem Başarısız!');
-            }
+            } 
         },
 
             error: function(err) {
@@ -205,33 +210,27 @@
                     {
                         placeHolderDiv.find('.modal').modal('hide');
 
-            /*             placesTable.row.add( [
+                      placesTable.row.add( [
           placeAddAjaxModel.PlaceDto.Place.Id,
           placeAddAjaxModel.PlaceDto.Place.Name,
           convertFirstLetterToUpperCase(placeAddAjaxModel.PlaceDto.Place.IsActive.toString()),
           placeAddAjaxModel.PlaceDto.Place.CreatedDate,
-                         ]).draw(false);*/
+                         ]).draw(false);
                     
-                        console.log(placeAddAjaxModel.PlaceDto.Place.IsActive)
-
-                    const newTableRow =`
+                 /*      const newTableRow =`
                                             <tr name="${placeAddAjaxModel.PlaceDto.Place.Id}">
-                                            <td>${placeAddAjaxModel.PlaceDto.Place.Id}</td>
+                                                <td>${placeAddAjaxModel.PlaceDto.Place.Id}</td>
                                                 <td>${placeAddAjaxModel.PlaceDto.Place.Name}</td>
                                                 <td>${placeAddAjaxModel.PlaceDto.Place.IsActive}</td>
                                                 <td>${placeAddAjaxModel.PlaceDto.Place.CreatedDate}</td>
-                                            </tr>`;  
+                                            </tr>`;  */
                       //  console.log(newTableRow + 'ntr');
-                       const newTableRowObject=$(newTableRow);
-                   //    console.log(newTableRowObject +'ntro');
-
+                     //  const newTableRowObject=$(newTableRow);
+        
                     //    newTableRowObject.hide();
-
-                         $('#placesTable').append(newTableRowObject);
-                        newTableRowObject.fadeIn(3500);
-
+                     //   $('#placesTable').append(newTableRowObject);
+                    //    newTableRowObject.fadeIn(3500);
                         toastr.success(`placeAddAjaxModel.PlaceDto.Message`, 'BAŞARILItoastfr')
-
                     }
 
 
