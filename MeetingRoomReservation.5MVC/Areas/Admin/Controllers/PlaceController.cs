@@ -82,7 +82,7 @@ namespace MeetingRoomReservation._5Mvc.Areas.Admin.Controllers
 
             }
 
-        public async Task<JsonResult> GellAllPlaces()
+        public async Task<JsonResult> GetAllPlaces()
         {
             var result = await _placeservice.GetAllAsync();
             var places = JsonSerializer.Serialize(result.Data, new JsonSerializerOptions

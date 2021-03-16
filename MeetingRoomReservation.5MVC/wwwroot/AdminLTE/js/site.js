@@ -4,6 +4,7 @@
 function convertToShortDate(dateString) {
     const shortDate = new Date(dateString).toLocaleDateString('en-US');
     return shortDate;
+    
 }
 
 function getJsonNetObject(obj, parentObj) {
@@ -36,6 +37,7 @@ function getJsonNetObjectById(parentObj, id) {
     for (var i in parentObj) {
         if (typeof (parentObj[i]) == "object" && parentObj[i] != null) {
             //going one step down in the object tree
+            
             var result = getJsonNetObjectById(parentObj[i], id);
             if (result != null) {
                 // return found object
@@ -44,4 +46,5 @@ function getJsonNetObjectById(parentObj, id) {
         }
     }
     return null;
+
 }
