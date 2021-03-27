@@ -23,30 +23,35 @@
                                     <table class="table table-bordered" id="placesTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                  <th>#</th>
+                                                <th>#</th>
                                                 <th>Yerleske Adi</th>
                                                 <th>Aktif</th>
-                                                  <th>Oluşturma Tarihi</th>
-                                  
+                                                <th>Oluşturma Tarihi</th>
+                                                <th>İşlemler</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
-                                            <tr>
-                                                 <th>#</th>
-                                              <th>Yerleske Adi</th>
+                                            <tr >
+                                                <th>#</th>
+                                                <th>Yerleske Adi</th>
                                                 <th>Aktif</th>
-                                                   <th>Oluşturma Tarihi</th> 
+                                                <th>Oluşturma Tarihi</th>
+                                                <th>İşlemler</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                        @foreach (var place in Model.Places)
                                        {  <tr name="@place.Id">
-                                            <td>@place.Id</td>
-                                                <td>@place.Name</td>
-                                                <td>@place.IsActive</td>
-                                                <td>@place.CreatedDate</td>
-                             
-                                            </tr>}
+    <td>@place.Id</td>
+    <td>@place.Name</td>
+    <td>@place.IsActive</td>
+    <td>@place.CreatedDate</td>
+    <td >
+        <button class="btn btn-primary btn-sm"><span class="fas fa-edit"></span>  Düzenle </button>
+        <button class="btn btn-danger btn-sm btn-delete" data-id="@place.Id"><span class="fas fa-minus-circle" ></span> Sil </button>
+    </td>
+
+</tr>}
                                           
                                            
                                         </tbody>
@@ -86,10 +91,10 @@
                     }
                     },
                     {
-        text: 'Yenile 3',
+        text: 'Yenile 0316',
                         className: 'btn btn-warning',             
                         action: function(e, dt, node, config) {  
-                        $('#placesTable').DataTable().ajax.reload();
+                   //     $('#placesTable').DataTable().ajax.reload();
        $.ajax       ({ 
            
             type:'GET',
@@ -230,7 +235,7 @@
                       newTableRowObject.hide();
                       $('#placesTable').append(newTableRowObject);
                newTableRowObject.fadeIn(3500);
-                        toastr.success(`placeAddAjaxModel.PlaceDto.Message`, 'BAŞARILItoastfr')
+                        toastr.success(`placeAddAjaxModel.PlaceDto.Message`, 'BAŞARILI')
                     }
 
 
